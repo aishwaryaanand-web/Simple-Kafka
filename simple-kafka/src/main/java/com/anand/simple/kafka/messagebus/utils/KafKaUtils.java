@@ -41,30 +41,30 @@ public class KafKaUtils {
 
 	private static Properties createTempPropducerProps() {
 		Properties props = new Properties();
-		props.put(KakaConstants.BATCH_NUM_MESSAGES, "");
-		props.put(KakaConstants.BATCH_SIZE, "");
-		props.put(KakaConstants.BUFFER_SIZE, "102400");
-		props.put(KakaConstants.CALLBACK_HANDLER, "");
-		props.put(KakaConstants.CALLBACK_HANDLER_PROPS, "");
-		props.put(KakaConstants.COMPRESSED_TOPICS, "");
-		props.put(KakaConstants.COMPRESSION_CODEC, "none");
-		props.put(KakaConstants.CONNECT_TIMEOUT_MS, "5000");
-		props.put(KakaConstants.EVENT_HANDLER, "");
-		props.put(KakaConstants.EVENT_HANDLER_PROPS, "");
-		props.put(KakaConstants.MAX_MESSAGE_SIZE, "1000000");
-		props.put(KakaConstants.METADATA_BROKER_LIST, "localhost:9092,localhost:9095");
-		props.put(KakaConstants.PARTITIONER_CLASS, "");
-		props.put(KakaConstants.PRODUCER_TYPE, "sync");
-		props.put(KakaConstants.QUEUE_BUFFERING_MAX_MESSAGES, "");
-		props.put(KakaConstants.QUEUE_BUFFERING_MAX_MS, "");
-		props.put(KakaConstants.QUEUE_ENQUEUE_TIMEOUT_MS, "");
-		props.put(KakaConstants.QUEUE_SIZE, "");
-		props.put(KakaConstants.QUEUE_TIME, "");
-		props.put(KakaConstants.RECONNECT_INTERVAL, "10 * 1000 * 1000");
-		props.put(KakaConstants.SERIALIZER_CLASS, "kafka.serializer.StringEncoder");
-		props.put(KakaConstants.SOCKET_TIMEOUT_MS, "30000");
-		props.put(KakaConstants.ZK_CONNECT, "");
-		props.put(KakaConstants.ZK_READ_NUM_RETRIES, "3");
+		props.put(KafkaConstants.BATCH_NUM_MESSAGES, "");
+		props.put(KafkaConstants.BATCH_SIZE, "");
+		props.put(KafkaConstants.BUFFER_SIZE, "102400");
+		props.put(KafkaConstants.CALLBACK_HANDLER, "");
+		props.put(KafkaConstants.CALLBACK_HANDLER_PROPS, "");
+		props.put(KafkaConstants.COMPRESSED_TOPICS, "");
+		props.put(KafkaConstants.COMPRESSION_CODEC, "none");
+		props.put(KafkaConstants.CONNECT_TIMEOUT_MS, "5000");
+		props.put(KafkaConstants.EVENT_HANDLER, "");
+		props.put(KafkaConstants.EVENT_HANDLER_PROPS, "");
+		props.put(KafkaConstants.MAX_MESSAGE_SIZE, "1000000");
+		props.put(KafkaConstants.METADATA_BROKER_LIST, "localhost:9093,localhost:9095");
+		props.put(KafkaConstants.PARTITIONER_CLASS, "");
+		props.put(KafkaConstants.PRODUCER_TYPE, "sync");
+		props.put(KafkaConstants.QUEUE_BUFFERING_MAX_MESSAGES, "");
+		props.put(KafkaConstants.QUEUE_BUFFERING_MAX_MS, "");
+		props.put(KafkaConstants.QUEUE_ENQUEUE_TIMEOUT_MS, "");
+		props.put(KafkaConstants.QUEUE_SIZE, "");
+		props.put(KafkaConstants.QUEUE_TIME, "");
+		props.put(KafkaConstants.RECONNECT_INTERVAL, "10 * 1000 * 1000");
+		props.put(KafkaConstants.SERIALIZER_CLASS, "kafka.serializer.StringEncoder");
+		props.put(KafkaConstants.SOCKET_TIMEOUT_MS, "30000");
+		props.put(KafkaConstants.ZK_CONNECT, "");
+		props.put(KafkaConstants.ZK_READ_NUM_RETRIES, "3");
 		return props;
 	}
 

@@ -8,10 +8,16 @@ import org.json.simple.JSONObject;
 
 import com.google.gson.Gson;
 
+/**
+ * Serializer class that can encode and decode Simple JSON object
+ * 
+ * @author Aakash
+ * 
+ */
 public class SimpleJSONSerializer implements Encoder<JSONObject>, Decoder<JSONObject> {
 
 	public SimpleJSONSerializer(VerifiableProperties verifiableProperties) {
-		/* This constructor must be present for successful compile. */
+
 	}
 
 	public JSONObject fromBytes(byte[] arg0) {

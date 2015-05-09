@@ -10,6 +10,12 @@ import kafka.utils.VerifiableProperties;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * Serializer class that can encode as well as decode object using Jackson
+ * 
+ * @author Aakash
+ * 
+ */
 public class jacksonJSONSerializer implements Encoder<Object>, Decoder<Object> {
 
 	public jacksonJSONSerializer(VerifiableProperties verifiableProperties) {
@@ -17,22 +23,22 @@ public class jacksonJSONSerializer implements Encoder<Object>, Decoder<Object> {
 	}
 
 	public Object fromBytes(byte[] bytes) {
-        ObjectMapper objectMapper = new ObjectMapper();
-        try {
-            return objectMapper.readValue(bytes, Map.class);
-        } catch (IOException e) {
-            
-        }
-        return null;
-    }
-	
+		ObjectMapper objectMapper = new ObjectMapper();
+		try {
+			return objectMapper.readValue(bytes, Map.class);
+		} catch (IOException e) {
+
+		}
+		return null;
+	}
+
 	public byte[] toBytes(Object object) {
-        ObjectMapper objectMapper = new ObjectMapper();
-        try {
-            return objectMapper.writeValueAsString(object).getBytes();
-        } catch (JsonProcessingException e) {
-           
-        }
-        return "".getBytes();
-    }
+		ObjectMapper objectMapper = new ObjectMapper();
+		try {
+			return objectMapper.writeValueAsString(object).getBytes();
+		} catch (JsonProcessingException e) {
+
+		}
+		return "".getBytes();
+	}
 }
