@@ -13,19 +13,19 @@ Simple-Kafka aims to provide a much simpler java API with implementation for pro
 ## How to create producer using simple-kafka
 To create a kafka producer using simple-kafka is a much easier process, all we need to do is.
 <code>
-* **KafakaProducerService kafkaPropducerService = ProducerFactory.getProducerService();**
+* **KafkaProducerService kafkaPropducerService = ProducerFactory.getProducerService();**
 * **Producer< String > producer = kafkaPropducerService.getProducer();** 
 </code>
 
 In above example we are creating a producer that can send String data based on default configuration as specified by user on jar creation.
 
-### KafakaProducerService
+### KafkaProducerService
 KafakaProducerService provides services through which we can create a custom producer based on our need as well as we can also send data of any type given we have its encoder and decoder class with us.
 
-####KafakaProducerService API Info
+####KafkaProducerService API Info
 We have good documentation in our code through which we can easily understand this API as well as anyone can also expand this API as per need.
 
-####KafakaProducerService API Methods to create kafka Producer
+####KafkaProducerService API Methods to create kafka Producer
 1. **Producer< String  > getProducer()** 
 2. **List< Producer< String > > getProducers(int numOfProducer)** 
 3. **< T > Producer< T > getProducer(Class< ? extends Encoder< T > > clazz)**
