@@ -20,7 +20,7 @@ public class KafakaProducerServiceImpl implements KafakaProducerService {
 			if (!KafKaUtils.hasPartitionClassInProps(producerProps)) {
 				return new ProducerImpl<String, String>(KafKaUtils.overideDefaultProdProp(producerProps));
 			} else {
-
+				return new ProducerImpl<String, String>(KafKaUtils.overideDefaultProdProp(producerProps));
 			}
 		}
 		return null;

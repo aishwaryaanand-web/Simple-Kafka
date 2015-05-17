@@ -2,6 +2,7 @@ package com.anand.simple.kafka.messagebus.publisher;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 
 import org.json.simple.JSONObject;
 
@@ -10,6 +11,7 @@ import com.anand.simple.kafka.messagebus.publisher.KafakaProducerService;
 import com.anand.simple.kafka.messagebus.publisher.KafakaProducerServiceImpl;
 import com.anand.simple.kafka.messagebus.publisher.Producer;
 import com.anand.simple.kafka.messagebus.serializer.SimpleJSONSerializer;
+import com.anand.simple.kafka.messagebus.utils.KafkaConstants;
 
 public class KafakaProducerServiceImplTest {
 
@@ -19,23 +21,29 @@ public class KafakaProducerServiceImplTest {
 	
 	public static void main(String[] args) {
 		getProducerTest_Simple();
+		getProducerTest_WithProps();
 		getProducerTest_WithSimpleJSONEncoder();
 	}
+	
+	
 
 	private static void getProducerTest_Simple() {
 		KafakaProducerService kafakaProducerService =new KafakaProducerServiceImpl();
 		Producer<String> producer =kafakaProducerService.getProducer();
-		producer.send("TestTopic","First Message To Kafka");
+		producer.send("TestTopic","100","First Message To Kafka");
 	}
 	
 	private static void getProducerTest_WithProps() {
 		KafakaProducerService kafakaProducerService =new KafakaProducerServiceImpl();
-		Producer<String> producer =kafakaProducerService.getProducer();
-		producer.send("TestTopic","First Message To Kafka");
+		Properties prop=new Properties();
+		prop.put(KafkaConstants.PARTITIONER_CLASS, "com.anand.simple.kafka.messagebus.partitoner.SimplePartitioner");
+		Producer<String> producer =kafakaProducerService.getProducer(prop);
+		producer.send("TestTopic","0","First Message To Kafka using partiotn");
 	}
 	
 	private static void getProducerTest_WithPropsOne() {
 		KafakaProducerService kafakaProducerService =new KafakaProducerServiceImpl();
+		
 		Producer<String> producer =kafakaProducerService.getProducer();
 		producer.send("TestTopic","First Message To Kafka");
 	}

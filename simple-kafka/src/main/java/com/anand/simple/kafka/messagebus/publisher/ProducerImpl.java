@@ -15,13 +15,19 @@ public class ProducerImpl<K, T> implements Producer<T> {
 
 	public ProducerImpl(Properties props) {
 		if (props != null) {
-			this.config=new ProducerConfig(props);
+			this.config = new ProducerConfig(props);
 			producer = new kafka.javaapi.producer.Producer<K, T>(config);
 		}
 	}
 
 	public void send(String topic, T message) {
 		this.producer.send(new KeyedMessage<K, T>(topic, message));
+	}
+
+	
+	@SuppressWarnings("unchecked")
+	public  void send(String topic, String partionNum, T message) {
+		this.producer.send(new KeyedMessage<K, T>(topic, (K) partionNum, message));
 	}
 
 	public void send(List<Map<String, T>> messageToMultipTopic) {

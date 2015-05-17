@@ -25,6 +25,18 @@ public interface Producer<T> {
 	public void send(String topic, T message);
 
 	/**
+	 * Sends message to a specific topic
+	 * 
+	 * @param topic
+	 *            - Topic on which producer want to send message
+	 * @param partionNum
+	 *            - Partition on which we want to send data
+	 * @param message
+	 *            - message that producer wants to send
+	 */
+	public void send(String topic, String partionNum, T message);
+
+	/**
 	 * sends messages to multiple topics
 	 * 
 	 * @param messageToMultipTopic

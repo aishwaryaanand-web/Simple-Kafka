@@ -24,7 +24,7 @@ public class KafKaUtils {
 	public static boolean hasPartitionClassInProps(Properties props) {
 		boolean hasPartition = false;
 		if (props != null) {
-			if (isNotNullOrEmpty(props.getProperty(""))) {
+			if (isNotNullOrEmpty(props.getProperty(KafkaConstants.PARTITIONER_CLASS))) {
 				hasPartition = true;
 			}
 		}
