@@ -57,7 +57,7 @@ public class ConsumerGroupExample {
     private static ConsumerConfig createConsumerConfig(String a_zookeeper, String a_groupId) {
         Properties props = new Properties();
         props.put("zookeeper.connect", "127.0.0.1:2181");
-        props.put("group.id", "test-consumer-group");
+        props.put("group.id", a_groupId);
         props.put("zookeeper.session.timeout.ms", "4000");
         props.put("zookeeper.sync.time.ms", "2000");
         props.put("auto.commit.interval.ms", "10000");
@@ -69,11 +69,15 @@ public class ConsumerGroupExample {
         String zooKeeper = "127.0.0.1:2181";
         String groupId = "test-consumer-group";
         String topic = "TestTopic";
+        String groupId1 = "test-consumer-group-one";
+        String topic1 = "TestTopic";
         int threads = 2;
  
         ConsumerGroupExample example = new ConsumerGroupExample(zooKeeper, groupId, topic);
         example.run(threads);
- 
+        ConsumerGroupExample example1 = new ConsumerGroupExample(zooKeeper, groupId1, topic1);
+        example1.run(threads);
+
         try {
             Thread.sleep(10000);
         } catch (InterruptedException ie) {

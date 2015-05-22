@@ -30,7 +30,7 @@ public class KafakaProducerServiceImplTest {
 	private static void getProducerTest_Simple() {
 		KafakaProducerService kafakaProducerService =new KafakaProducerServiceImpl();
 		Producer<String> producer =kafakaProducerService.getProducer();
-		producer.send("TestTopic","100","First Message To Kafka");
+		producer.send("TestTopic1","100","First Message To Kafka");
 	}
 	
 	private static void getProducerTest_WithProps() {
